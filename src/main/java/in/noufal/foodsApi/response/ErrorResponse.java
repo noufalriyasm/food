@@ -5,11 +5,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class FoodResponse {
+@Data
+public class ErrorResponse {
   private int status;
-  private FoodMiniResponse item;
+  private String message;
 }

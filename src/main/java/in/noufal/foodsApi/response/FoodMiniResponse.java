@@ -1,26 +1,22 @@
-package in.noufal.foodsApi.entity;
+package in.noufal.foodsApi.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @Builder
-@Document(collection = "foods")
-public class FoodEntity {
-  @Id private String id;
+public class FoodMiniResponse {
+  private String id;
   private String name;
   private String description;
   private double price;
   private String category;
   private String imageUrl;
   private Boolean isActive;
-  private Boolean isRemoved;
   private long createdOn;
   private long updatedOn;
 }

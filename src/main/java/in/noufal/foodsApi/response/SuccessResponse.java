@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class FoodResponse {
+public class SuccessResponse {
   private int status;
-  private FoodMiniResponse item;
+  private String message;
+  private String id;
 }

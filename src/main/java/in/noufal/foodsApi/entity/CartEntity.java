@@ -2,26 +2,25 @@ package in.noufal.foodsApi.entity;
 
 import in.noufal.foodsApi.constants.DbCollections;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-@Document(collection = DbCollections.FOODS)
-public class FoodEntity {
+@Document(collection = DbCollections.CARTS)
+public class CartEntity {
   @Id private String id;
-  private String name;
-  private String description;
-  private double price;
-  private String category;
-  private String imageUrl;
-  private Boolean isActive;
-  private Boolean isRemoved;
-  private long createdOn;
-  private long updatedOn;
+  private String userId;
+  private Map<String, Integer> items = new HashMap<>();
+
+  public CartEntity(String userId, Map<String, Integer> items) {
+    this.userId = userId;
+    this.items = items;
+  }
 }

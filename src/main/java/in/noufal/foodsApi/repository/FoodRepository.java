@@ -41,11 +41,11 @@ public class FoodRepository {
     return Pair.of(totalCount, allFoodList);
   }
 
-  public FoodEntity getFoodItemDetails(final String foodItemId) {
+  public FoodEntity getFoodItemDetails(final String foodItemId) throws MongoException {
     return mongoTemplate.findById(new ObjectId(foodItemId), FoodEntity.class);
   }
 
-  public FoodEntity softDeleteFoodItem(final String foodItemId) {
+  public FoodEntity softDeleteFoodItem(final String foodItemId) throws MongoException {
     Query query = new Query();
     query.addCriteria(Criteria.where(Fields._ID).is(foodItemId).and(Fields.IS_REMOVED).is(false));
 
@@ -62,7 +62,7 @@ public class FoodRepository {
     return deletedFood;
   }
 
-  public void deleteFoodItem(final String foodItemId) {
+  public void deleteFoodItem(final String foodItemId) throws MongoException {
     Query query = new Query();
     query.addCriteria(Criteria.where(Fields._ID).is(foodItemId));
 

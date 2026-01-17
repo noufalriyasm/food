@@ -11,4 +11,5 @@ public interface Fields {
   String UPDATED_ON = "updatedOn";
   String IS_ACTIVE = "isActive";
   String IS_REMOVED = "isRemoved";
+  String EMAIL = "email";
 }

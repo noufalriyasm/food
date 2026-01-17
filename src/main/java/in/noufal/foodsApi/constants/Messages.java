@@ -5,4 +5,5 @@ public interface Messages {
   String DUPLICATE_PARAM = "%s parameter is repeating";
   String CREATED_SUCCESSFULLY = "%s created succesfully";
   String DELETED_SUCCESFULLY = "%s deleted succesfully";
+  String USER_NOT_FOUND = "User not found";
 }

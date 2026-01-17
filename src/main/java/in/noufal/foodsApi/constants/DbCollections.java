@@ -1,5 +1,7 @@
 package in.noufal.foodsApi.constants;
 
-public class DbCollections {
-    String FOODS="foods";
+public interface DbCollections {
+  String FOODS = "foods";
+  String USERS = "users";
+  String CARTS = "carts";
 }
